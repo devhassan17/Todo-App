@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='todo.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='delete.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div  class="title">
+            <a href=""><h2>My Todo</h2></a>
+        </div>
+        <div>
+            <button>Update</button>
+        </div>
+        <div>
+            <button>Log out</button>
+        </div>
+    </div>
+    <center>
+        <h1>My Todos</h1>
+    <table >
+        <tr >
+            <th>Id</th>
+            <th>Task-Name</th>
+            <th>Task-Desc</th>
+            <th>Time-Created</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td >1</td>
+            <td>Work</td>
+            <td>Going to Work</td>
+            <td>10-12-23</td>
+            <td><center><button class="update">Update</button></center></td>
+            <td><center><button class="delete">Delete</button></center></td>
+        </tr>
+    </table>
+    </center>
+</body>
+</html>

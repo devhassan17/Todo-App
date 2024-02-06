@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='todo.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update Profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+    <center>
+    <div class="login-page">
+        <center>
+            <br>
+            <h1>
+                Update Profile
+            </h1>
+            <form action="/update" method="POST">
+                <br>
+                <input type="text>" name="name" placeholder="Name" required>
+                <br>
+                <input placeholder="Occupation" name="occupation" required>
+                <br>
+                <label></label>
+                <input  placeholder="Password" required type="password" name="password">
+                <br>
+                <br>
+                <br>
+                <button>Update Profile</button>
+            </form>
+            <form action="/dashboard">
+                <Button>Back</Button>
+            </form>
+            
+            <br>
+            {{msg}}
+        </center>
+    </div>
+</center>
+</body>
+</html>

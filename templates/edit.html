@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='todo.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div  class="title">
+            <a href=""><h2>My Todo</h2></a>
+        </div>
+    </div>
+        <div class="login-page">
+            <center>
+                <h1>
+                    Update todo
+                </h1>
+                <form action="/edit/{{ todo.id }}" method="POST">
+                    <input type="text>" name="todoName" value="{{ todo.todoName }}" placeholder="Todo Name" required>
+                    <br>
+                    <input placeholder="Todo Description" value="{{ todo.todoDesc }}" name="todoDesc" required>
+                    <br>
+                    <br>
+                    <button>Update Todo</button>
+            </center>
+    </div>
+</body>
+</html>

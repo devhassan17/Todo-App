@@ -1,0 +1,39 @@
+body{
+    width: 100%;
+    background-color: rgb(40, 81, 125);
+    margin: 0 0;
+}
+.login-page{
+    width: 30%;
+    height: 450px;
+    text-align: center;
+    color: rgb(40, 81, 125);
+    justify-content: center;
+    background-color: white;
+    padding: 20px 20px 0px 0px;
+    margin: 20px 20px 20px 20px;
+}
+input{
+    width: 70%;
+    height: 30px;
+    margin-top: 20px;
+    border: 2px solid rgb(40, 81, 125);
+}
+label{
+    font-size: large;
+}
+button{
+    height: 30px;
+    margin-top: 20px;
+    width: 40%;
+    background-color: orange;
+    color: white;
+    font-size: small;
+    border: 2px solid orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sign-up{
+    margin-top: -20px;
+    font-size: small;
+    border: 2px solid orange;
+}

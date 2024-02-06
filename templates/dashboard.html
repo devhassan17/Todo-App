@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='todo.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="title"> 
+            <a style="display: flex;" href=""><h2>Welcome {{ user }},</h2></a>
+        </div>
+        <div>
+            <form action="/update">
+                <button>Update</button>
+            </form>
+            
+        </div>
+        <div>
+            <form action="/logout">
+                <button>Log out</button>
+            </form>
+        </div>
+    </div>
+    <center>
+        <div class="profile-img">
+            <img class="profile-img-section" src="{{ url_for('static', filename='images/' + img_filename) }}" alt="User Image">
+
+        </div>
+        
+        <h1 class="title-section"><center>My Todos</center></h1>
+    </center>
+    <center class="todo-section">
+    <form class="addtodo" action="/addtodo" method="POST">
+        <input class="name" id="todo_name_input" type="text>" name="todoName" placeholder="Todo Name" required>
+        <br>
+        <input class="desc"  id="todo_des_input" placeholder="Todo Description" name="todoDesc" required>
+        <br>
+        <br>
+        <input class="datetime" type="datetime-local" name="duetime" required>
+        <button onclick="formHandle()" type="submit" class="addbtn">Add Todo</button>
+        <h3>{{ msj }}</h3>
+        <h3>{{msj2}}</h3>
+    </form>
+</center>
+<br>
+    <center>
+    <table >
+        <tbody id="tables">
+
+        <tr >
+            <th>Id</th>
+            <th>Task-Name</th>
+            <th colspan="2">Task-Description</th>
+            <th>Time-Created</th>
+            <th>Due Time</th>
+            <th>Completed</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            {% for item in data %}
+            <td >{{ loop.index }}</td>
+            <td>{{item.todoName}}</td>
+            <td colspan="2">{{item.todoDesc}}</td>
+            <td>{{item.time}}</td>
+            <td>{{ item.due_date }}</td>
+            <td> <a href="/complete/{{ item.id }}"><center><input type="checkbox" name="completed" {% if item.completed %} checked {% endif %} id=""></center> </a></td>
+            <td><center><a href="/edit/{{ item.id }}"><button  class="update">Update</button></a></center></td>
+            <td><center><a href="/delete/{{ item.id }}" ><button class="delete">Delete</button></a></center></td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+
+    </table>
+    </center>
+
+    <script>
+        const formHandle = (e) => {
+            e.preventdefault()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='todo.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+    <center>
+    <div class="login-page">
+        <center>
+            <h1>
+                Sign Up
+            </h1>
+            <form action="/signup" enctype="multipart/form-data" method="POST">
+                <input type="text>" name="name" placeholder="Name" required>
+                <br>
+                <input placeholder="Occupation" name="occupation" required>
+                <br>
+                <label></label>
+                <input placeholder="Username"  required type="text" name="username">
+                <br>
+                <label></label>
+                <input  placeholder="Password" required type="password" name="password">
+                <br>
+                <input class="uploadimg" type="file" name="file" id="">
+                <br>
+                <button>Sign Up</button>
+            </form>
+            <br>
+            {{msg}}
+            <h5>
+                Already have any account?
+            </h5>
+            <form action="/login">
+            <button class="sign-up">Log In</button>
+            </form>
+            <br>
+            <form action="/">
+                <button class="sign-up">Back</button>
+                </form
+        </center>
+    </div>
+</center>
+</body>
+</html>

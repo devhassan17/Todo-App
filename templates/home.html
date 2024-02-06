@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='todo.png') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ali Hassan's Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(40, 81, 125);
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container_out {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 80%; 
+            max-width: 80%; 
+        }
+        
+        h1 {
+            color: rgb(40, 81, 125);
+            font-family: Verdana, sans-serif;
+        }
+        p {
+            font-size: 18px;
+            color: black;
+            font-family: Verdana, sans-serif;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 2px solid orange;
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff8800;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container_out">
+
+        {% if user %}
+        <h1>Welcome to Ali Hassan's Todo App</h1>
+        <p>
+            Ali Hassan's Todo App is a user-friendly and efficient task management
+            application designed to help users organize their daily activities
+            and stay productive. With a simple and intuitive interface, users
+            can easily add, edit, and delete tasks, set due dates, and mark tasks
+            as completed. The app allows users to create task lists, prioritize items,
+            and categorize tasks based on their projects or categories. It provides
+            a clear and at-a-glance view of pending and completed tasks, making it easy
+            to track progress and stay organized. The Todo App is available on multiple
+            platforms, ensuring that users can access their tasks and to-do lists from
+            anywhere. Whether you're managing personal errands or work-related assignments,
+            Ali Hassan's Todo App is a valuable tool for streamlining your tasks and boosting
+            your productivity.
+        </p>
+
+        <form action="/dashboard">
+            <button class="btn">Go to DashBoard</button>
+        </form>
+    </div>
+        {% else %}
+        <div class="container">
+            <h1>Welcome to Ali Hassan's Todo App</h1>
+            <p>
+                Ali Hassan's Todo App is a user-friendly and efficient task management
+                application designed to help users organize their daily activities
+                and stay productive. With a simple and intuitive interface, users
+                can easily add, edit, and delete tasks, set due dates, and mark tasks
+                as completed. The app allows users to create task lists, prioritize items,
+                and categorize tasks based on their projects or categories. It provides
+                a clear and at-a-glance view of pending and completed tasks, making it easy
+                to track progress and stay organized. The Todo App is available on multiple
+                platforms, ensuring that users can access their tasks and to-do lists from
+                anywhere. Whether you're managing personal errands or work-related assignments,
+                Ali Hassan's Todo App is a valuable tool for streamlining your tasks and boosting
+                your productivity.
+            </p>
+        <div class="btn-container">
+            <form action="/signup">
+                <button class="btn">Sign Up</button> 
+            </form>
+            <form action="/login">
+                <button class="btn">Log  In</button> 
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
